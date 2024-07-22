@@ -19,6 +19,7 @@ class CreateBarangMasuksTable extends Migration
             $table->integer('stock');
             $table->date('tanggal');
             $table->string('penerima',255);
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
             $table->foreign('barang_id','barang_masuk_foreign')->references('id')->on('barangs')->onDelete('cascade');
         });
